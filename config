@@ -1,0 +1,305 @@
+# fonts
+set $mod Mod4
+
+# font for window titles. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font xft:Droid Sans Mono 9
+
+ 
+#font pango:Terminus 9
+#font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-iso10646-1
+floating_modifier $mod
+new_window normal 
+#new_float 1pixel
+
+# colors
+
+#class              border       backgr.    text
+#client.focused               #121212 #101010 #9e8a8e
+#client.focused_inactive #101010 #191919 #999999
+client.focused               #857676 #423b3b #ac4c4c
+client.focused_inactive #101010 #191919 #999999
+client.unfocused           #101010 #191919 #999999
+client.urgent                 #cd989a #cd989a #2e3436
+
+client.background           #1d1d1d
+
+# keybinds
+
+# start a terminal
+bindsym $mod+Return exec evilvte
+
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+# DMENU 
+#bindsym $mod+e exec hdmenu_run
+# DMENU MPD CONTROL
+#bindsym $mod+e exec dmenu-mpd -a
+#bindsym $mod+z exec dmenu-mpd -t
+
+
+# print screen
+bindsym $mod+m exec gnome-screenshot
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+#bindsym $mod+t focus [class="^Evilvte"] 
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+x layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+q focus child
+#bindcode $mod+d focus child
+
+
+#workspace 1 Term
+#workspace 2 Browser
+#workspace 3 Chat
+#workspace 4 Media
+#workspace 5 File
+#workspace 6 Net
+#workspace 7 Other
+#workspace 8 Nwoodoo
+#workspace 9 Swubook
+# switch to workspace
+bindsym $mod+1 workspace 1:Term
+bindsym $mod+2 workspace 2:Browser
+bindsym $mod+3 workspace 3:Chat
+bindsym $mod+4 workspace 4:Mail
+bindsym $mod+5 workspace 5:Media
+bindsym $mod+6 workspace 6:File
+bindsym $mod+7 workspace 7:Other
+bindsym $mod+8 workspace 8:Nwoodoo
+bindsym $mod+9 workspace 9:Swubook
+bindsym Control+Left workspace prev
+bindsym Control+Right workspace next
+#bindsym Control+h workspace prev
+bindsym Control+l workspace next
+
+# move focused container to workspace
+bindsym $mod+Control+1 move workspace 1:Term
+bindsym $mod+Control+2 move workspace 2:Browser
+bindsym $mod+Control+3 move workspace 3:Chat
+bindsym $mod+Control+4 move workspace 4:Mail
+bindsym $mod+Control+5 move workspace 5:Media
+bindsym $mod+Control+6 move workspace 6:File
+bindsym $mod+Control+7 move workspace 7:Other
+bindsym $mod+Control+8 move workspace 8:Nwoodoo
+bindsym $mod+Control+9 move workspace 9:Swubook
+#bindsym $mod+Shift+exclam move workspace 1:Term
+#bindsym $mod+Shift+quotedbl move workspace 2:Browser
+#bindsym $mod+Shift+sterling move workspace 3:Chat
+#bindsym $mod+Shift+dollar move workspace 4:Media
+#bindsym $mod+Shift+percent move workspace 5:File
+#bindsym $mod+Shift+ampersand move workspace 6:Net
+#bindsym $mod+Shift+slash move workspace 7:Other
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# reload the configuration file
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym l               resize shrink left 10 px or 10 ppt
+        bindsym Shift+l         resize grow   left 10 px or 10 ppt
+
+        bindsym k               resize shrink down 10 px or 10 ppt
+        bindsym Shift+k         resize grow   down 10 px or 10 ppt
+
+        bindsym i               resize shrink up 10 px or 10 ppt
+        bindsym Shift+i         resize grow   up 10 px or 10 ppt
+
+        bindsym j       resize shrink right 10 px or 10 ppt
+        bindsym Shift+j resize grow   right 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left 10 px or 10 ppt
+#        bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+        bindsym Right       resize grow   left 10 px or 10 ppt
+
+        bindsym Down        resize shrink down 10 px or 10 ppt
+#        bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+        bindsym Up          resize grow   down 10 px or 10 ppt
+
+#        bindsym Up          resize shrink up 10 px or 10 ppt
+#        bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+#
+#        bindsym Right       resize shrink right 10 px or 10 ppt
+#        bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#bindsym $mod+r mode "resize"
+
+# Screenshot
+bindsym 0xff61 exec scrot  ~/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
+
+# ncmpcpp
+
+#bindsym Mod4+XF86AudioPlay exec mpc play
+#bindsym Mod4+Shift+XF86AudioPlay exec mpc pause
+#bindsym Mod4+XF86AudioStop exec mpc stop
+#bindsym Mod4+XF86AudioNext exec mpc next
+#bindsym Mod4+XF86AudioPrev exec mpc prev
+#bindsym Mod4+XF86AudioRaiseVolume exec mpc volume +5
+#bindsym Mod4+XF86AudioLowerVolume exec mpc volume -5
+#bindsym Mod4+XF86AudioMute exec urxvtc -name ncmpcpp -e ncmpcpp
+
+# Browser
+
+bindsym XF86HomePage exec luakit
+bindsym XF86Mail exec luakit -u myopera.com
+
+# Media shortcuts
+bindsym XF86AudioPlay exec mpc toggle & mpc | head -n 1 | message
+bindsym XF86AudioStop exec mpc stop & echo Stopped | message
+bindsym XF86AudioPrev exec mpc prev & mpc | head -n 1 | message
+bindsym XF86AudioNext exec mpc next & mpc | head -n 1 | message
+
+bindsym $mod+p exec mpc toggle & mpc | head -n 1 | message
+bindsym $mod+i exec mpc prev & mpc | head -n 1 | message
+bindsym $mod+o exec mpc next & mpc | head -n 1 | message
+## volume control
+bindsym XF86AudioMute exec amixer -c0 sset Master 0%
+bindsym XF86AudioLowerVolume exec amixer -c0 sset Master 3%-
+bindsym XF86AudioRaiseVolume exec amixer -c0 sset Master 3%+
+
+bindsym XF86KbdBrightnessDown exec asus-kbd-bl.py -1 k
+bindsym XF86KbdBrightnessUp exec asus-kbd-bl.py +1 k
+
+bindsym Shift+XF86KbdBrightnessDown exec asus-kbd-bl.py -300 s
+bindsym Shift+XF86KbdBrightnessUp exec asus-kbd-bl.py +300 s
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+    #mode dock
+    #position top 
+    #status_command i3blocks
+    #workspace_buttons yes
+        #position bottom
+    #modifier Mod4
+        #tray_output none
+    #font pango: Terminus, Icon 9
+        #colors {
+        #background 1A1A1A
+                #statusline aaaaaa
+                #separator aaaaaa
+                #focused_workspace 1A1A1A 1A1A1A #77438F
+                #active_workspace ff8c00 1A1A1A #ffffff 
+                #inactive_workspace 1A1A1A 1A1A1A #aaaaaa 
+                #urgent_workspace 1A1A1A 1A1A1A #3B89B5
+        #}
+#}
+bar {
+    mode dock
+    position top 
+#    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    #font xft:Droid Sans Mono 9 
+    #font pango:DejaVu Sans Mono 9
+#    font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 15
+    font pango:Terminus 9
+    status_command i3status --config ~/.i3/i3status.sh
+#    status_command conky -c ~/.i3/conky_conf2
+#    status_command i3status | ~/.i3/status.sh
+    workspace_buttons yes
+    colors {
+        background #101010
+        statusline #999999
+        focused_workspace #825969 #191919
+        active_workspace #825969 #101010
+        inactive_workspace #9a878f #191919
+        urgent_workspace #2e3436 #9a878f
+    }
+}
+
+## WORKSPACE App Specs (obxprop | grep WM_CLASS)
+#workspace 1 Term
+#workspace 2 Browser
+#workspace 3 Chat
+#workspace 4 Media 
+#workspace 5 File
+#workspace 6 Net
+#workspace 7 Other
+
+assign [class="Terminator"] 9:Swubook
+assign [class="libreoffice"] 6:file
+assign [class="gedit"] 6:file
+assign [class="Evilvte"] 1:Term
+assign [class="Firefox"] → 2:Browser
+assign [class="Chromium"] 2:Browser
+assign [class="google-chrome"] 2:Browser
+assign [class="Skype"] 5:Media
+assign [class="Xchat"] 3:Chat
+assign [class="Icedove"] 4:Mail
+assign [class="Clementine"] 5:Media
+assign [class="VLC"] 5:Media
+assign [class="Gimp"] 6:File
+assign [class="Gedit"] 6:File
+assign [class="Googleearth"] 5:Media
+assign [class="Nautilus"] 6:File
+assign [class="Libreoffice"] 6:File
+assign [class="Transmission"] 6:File
+assign [class="Deluge"] 6:File
+assign [class="Stellarium"] 7:Other
+#output VGA-0
+exec --no-startup-id nitrogen --restore
+exec_always ~/my_script.sh
